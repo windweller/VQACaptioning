@@ -1,0 +1,6 @@
+pyemd
+lmdb
+gensim
+torch==1.3
+torchvision==0.5
+kenlm

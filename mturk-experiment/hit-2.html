@@ -1,0 +1,773 @@
+
+<html><head><title>HIT</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/></head><body><script src="//uniqueturker.myleott.com/lib.js" type="text/javascript"></script><script type="text/javascript">
+(function(){
+    var ut_id = "69bee785072fb73667c9b131edd88224";
+    if (UTWorkerLimitReached(ut_id)) {
+        document.getElementById('mturk_form').style.display = 'none';
+        document.getElementsByTagName('body')[0].innerHTML = "You have already completed the maximum number of HITs allowed by this requester. Please click 'Return HIT' to avoid any impact on your approval rating.";
+    }
+})();
+</script><!-- Bootstrap v3.0.3 -->
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" /><script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+<div class="row col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Instructions</strong></div>
+
+<div class="panel-body">
+<p>You will be shown 13 questions and associated image caption texts. Please try to determine whether the caption includes an answer to the question.</p>
+
+<p>You will read descriptions of birds and try to answer the questions prompt. For people who are less familiar with bird terminology, here are some quick introductions:</p>
+
+<p><img src="https://infovisual.info/storage/app/media/02/img_en/053%20Morphology%20of%20a%20bird.jpg" /></p>
+
+<p><img height="700px" src="https://nusavifauna.files.wordpress.com/2012/08/bird_anatomy_1.jpeg" /></p>
+
+<p><img src="https://7esl.com/wp-content/uploads/2018/05/Untitled-design-17.png" width="700px" /></p>
+
+<p>The pictures provide a basic demonstration of bird's anatomy, but it is not a one-to-one match to the description. Here are some ground-truth examples to help you quickly familiarize with the task:</p>
+
+<fieldset><label>Example 1</label>
+
+<p>Question: <strong>What is the breast color?</strong></p>
+
+<p>Caption: <strong>a small bird with yellow chest white vent and gray crown</strong></p>
+
+<p><input disabled="disabled" type="radio" /> red</p>
+
+<p><input checked="checked" type="radio" /> yellow</p>
+
+<p><input disabled="disabled" type="radio" /> balck</p>
+
+<p><input disabled="disabled" type="radio" /> Question is discussed in caption but answer options are too different</p>
+
+<p><input disabled="disabled" type="radio" /> The caption does not contain an answer to the question</p>
+</fieldset>
+
+<p>In this example, even though the description says <b>chest</b>, you should realize that it is describing <b>breast</b> region.</p>
+
+<fieldset><label>Example 2</label>
+
+<p>Question: <strong>What is the throat color?</strong></p>
+
+<p>Caption: <strong>this large bird has a white body black wings and long hooked bill</strong></p>
+
+<p><input disabled="disabled" type="radio" /> red</p>
+
+<p><input disabled="disabled" type="radio" /> yellow</p>
+
+<p><input disabled="disabled" type="radio" /> balck</p>
+
+<p><input disabled="disabled" type="radio" /> Question is discussed in caption but answer options are too different</p>
+
+<p><input checked="checked" type="radio" /> The caption does not contain an answer to the question</p>
+</fieldset>
+
+<p>In this example, very generic description like <b>"white body"</b> does not tell us enough information on which part of the body is white. Therefore, we cannot answer this question. Similarly, "white body" <b>does not</b> mean "white breast", "whtie back", "white wing", etc.</p>
+
+<fieldset><label>Example 3</label>
+
+<p>Question: <strong>What is the breast pattern?</strong></p>
+
+<p>Caption: <strong>this bird has a white belly and breast with a speckled appearance on its back</strong></p>
+
+<p><input disabled="disabled" type="radio" /> solid</p>
+
+<p><input disabled="disabled" type="radio" /> spotted</p>
+
+<p><input disabled="disabled" type="radio" /> striped</p>
+
+<p><input disabled="disabled" type="radio" /> multi-colored</p>
+
+<p><input disabled="disabled" type="radio" /> Question is discussed in caption but answer options are too different</p>
+
+<p><input checked="checked" type="radio" /> The caption does not contain an answer to the question</p>
+</fieldset>
+
+<p>In this example, even though <b>"white belly and breast"</b> was written, it is not describing the <b>pattern</b> of the breast. In order to have a valid description of the pattern of breast, words like <b>"speckled", "spotted", "solid", "colored"</b> need to be used.</p>
+
+<p>Now, please complete the next 2 trial questions yourself. You must complete them in order to receive pay!.</p>
+
+<fieldset><label>Trial 1</label>
+
+<p>Question: <strong>What is the back color?</strong></p>
+
+<p>Caption: <strong>this is a black bird with white on the wingbars and orange feet</strong></p>
+
+<p><input name="trial1answer" onclick="document.getElementById('trial1-failure').style.display='block'; document.getElementById('trial1-success').style.display='none'" type="radio" /> red</p>
+
+<p><input name="trial1answer" onclick="document.getElementById('trial1-failure').style.display='block'; document.getElementById('trial1-success').style.display='none'" type="radio" /> yellow</p>
+
+<p><input name="trial1answer" onclick="document.getElementById('trial1-failure').style.display='block'; document.getElementById('trial1-success').style.display='none'" type="radio" /> balck</p>
+
+<p><input name="trial1answer" onclick="document.getElementById('trial1-failure').style.display='block'; document.getElementById('trial1-success').style.display='none'" type="radio" /> Question is discussed in caption but answer options are too different</p>
+
+<p><input name="trial1answer" onclick="document.getElementById('trial1-failure').style.display='none'; document.getElementById('trial1-success').style.display='block'" type="radio" /> The caption does not contain an answer to the question</p>
+
+<div id="trial1-failure" style="display:none">
+<p style="color:red"><b>Wrong!</b> Notice that "black bird" is too general of a description for any part of the bird.</p>
+</div>
+
+<div id="trial1-success" style="display:none">
+<p style="color:blue"><b>Correct!</b> Congratulations! Keep in mind that "black bird" is too general of a description for any part of the bird.</p>
+</div>
+</fieldset>
+
+<fieldset><label>Trial 2</label>
+
+<p>Question: <strong>What is the breast pattern?</strong></p>
+
+<p>Caption: <strong>a small yellow bird with a black crown and throat</strong></p>
+
+<p><input name="trial2answer" onclick="document.getElementById('trial2-failure').style.display='block'; document.getElementById('trial2-success').style.display='none'" type="radio" /> solid</p>
+
+<p><input name="trial2answer" onclick="document.getElementById('trial2-failure').style.display='block'; document.getElementById('trial2-success').style.display='none'" type="radio" /> spotted</p>
+
+<p><input name="trial2answer" onclick="document.getElementById('trial2-failure').style.display='block'; document.getElementById('trial2-success').style.display='none'" type="radio" /> striped</p>
+
+<p><input name="trial2answer" onclick="document.getElementById('trial2-failure').style.display='block'; document.getElementById('trial2-success').style.display='none'" type="radio" /> multi-colored</p>
+
+<p><input name="trial2answer" onclick="document.getElementById('trial2-failure').style.display='block'; document.getElementById('trial2-success').style.display='none'" type="radio" /> Question is discussed in caption but answer options are too different</p>
+
+<p><input name="trial2answer" onclick="document.getElementById('trial2-failure').style.display='none'; document.getElementById('trial2-success').style.display='block'" type="radio" /> The caption does not contain an answer to the question</p>
+
+<div id="trial2-failure" style="display:none">
+<p style="color:red"><b>Wrong!</b> Rembmer "yellow" as a color word should not be used to describe patterns!</p>
+</div>
+
+<div id="trial2-success" style="display:none">
+<p style="color:blue"><b>Correct!</b> Congratulations! Keep in mind that "yellow" as a color word should not be used to describe pattern!</p>
+</div>
+</fieldset>
+
+<p>If you have finished the trial round, please go ahead and annotate the rest.</p>
+
+<p>For some cases, it will be immediately evident that the caption answers the question. We will use these to check that you are working carefully.</p>
+
+<p>For others, it will be less clear whether the caption answers the question. We won't be checking your work with these; just do your best to come to a clear conclusion.</p>
+</div>
+</div>
+<!-- End Instructions --><!-- Content Body --><crowd-form>
+<fieldset><label>1</label>
+
+<p>Question: <strong>What is the wing pattern?</strong></p>
+
+<p>Caption: <strong>a small bird with brown striped wings an off-white underbelly and stripes of brown around its head</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question1answer0" name="question1answer" type="radio" value="solid" /> <label for="question1answer0">solid</label></div>
+
+<div class="rgroup"><input id="question1answer1" name="question1answer" type="radio" value="spotted" /> <label for="question1answer1">spotted</label></div>
+
+<div class="rgroup"><input id="question1answer2" name="question1answer" type="radio" value="striped" /> <label for="question1answer2">striped</label></div>
+
+<div class="rgroup"><input id="question1answer3" name="question1answer" type="radio" value="multi-colored" /> <label for="question1answer3">multi-colored</label></div>
+
+<div class="rgroup"><input id="question1answer4" name="question1answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question1answer4">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question1answer5" name="question1answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question1answer5">The caption does not contain an answer to the question</label></div>
+
+<div class="rgroup"><input id="question1answer6" name="question1answer" type="radio" value="" /> <label for="question1answer6"></label></div>
+
+<div class="rgroup"><input id="question1answer7" name="question1answer" type="radio" value="" /> <label for="question1answer7"></label></div>
+
+<div class="rgroup"><input id="question1answer8" name="question1answer" type="radio" value="" /> <label for="question1answer8"></label></div>
+
+<div class="rgroup"><input id="question1answer9" name="question1answer" type="radio" value="" /> <label for="question1answer9"></label></div>
+
+<div class="rgroup"><input id="question1answer10" name="question1answer" type="radio" value="" /> <label for="question1answer10"></label></div>
+
+<div class="rgroup"><input id="question1answer11" name="question1answer" type="radio" value="" /> <label for="question1answer11"></label></div>
+
+<div class="rgroup"><input id="question1answer12" name="question1answer" type="radio" value="" /> <label for="question1answer12"></label></div>
+
+<div class="rgroup"><input id="question1answer13" name="question1answer" type="radio" value="" /> <label for="question1answer13"></label></div>
+
+<div class="rgroup"><input id="question1answer14" name="question1answer" type="radio" value="" /> <label for="question1answer14"></label></div>
+
+<div class="rgroup"><input id="question1answer15" name="question1answer" type="radio" value="" /> <label for="question1answer15"></label></div>
+
+<div class="rgroup"><input id="question1answer16" name="question1answer" type="radio" value="" /> <label for="question1answer16"></label></div>
+</fieldset>
+
+<fieldset><label>2</label>
+
+<p>Question: <strong>What is the beak shape?</strong></p>
+
+<p>Caption: <strong>this is a yellow bird with a black cheek patch and a black cheek patch</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question2answer0" name="question2answer" type="radio" value="curved_(up_or_down)" /> <label for="question2answer0">curved_(up_or_down)</label></div>
+
+<div class="rgroup"><input id="question2answer1" name="question2answer" type="radio" value="dagger" /> <label for="question2answer1">dagger</label></div>
+
+<div class="rgroup"><input id="question2answer2" name="question2answer" type="radio" value="hooked" /> <label for="question2answer2">hooked</label></div>
+
+<div class="rgroup"><input id="question2answer3" name="question2answer" type="radio" value="needle" /> <label for="question2answer3">needle</label></div>
+
+<div class="rgroup"><input id="question2answer4" name="question2answer" type="radio" value="hooked_seabird" /> <label for="question2answer4">hooked_seabird</label></div>
+
+<div class="rgroup"><input id="question2answer5" name="question2answer" type="radio" value="spatulate" /> <label for="question2answer5">spatulate</label></div>
+
+<div class="rgroup"><input id="question2answer6" name="question2answer" type="radio" value="all-purpose" /> <label for="question2answer6">all-purpose</label></div>
+
+<div class="rgroup"><input id="question2answer7" name="question2answer" type="radio" value="cone" /> <label for="question2answer7">cone</label></div>
+
+<div class="rgroup"><input id="question2answer8" name="question2answer" type="radio" value="specialized" /> <label for="question2answer8">specialized</label></div>
+
+<div class="rgroup"><input id="question2answer9" name="question2answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question2answer9">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question2answer10" name="question2answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question2answer10">The caption does not contain an answer to the question</label></div>
+
+<div class="rgroup"><input id="question2answer11" name="question2answer" type="radio" value="" /> <label for="question2answer11"></label></div>
+
+<div class="rgroup"><input id="question2answer12" name="question2answer" type="radio" value="" /> <label for="question2answer12"></label></div>
+
+<div class="rgroup"><input id="question2answer13" name="question2answer" type="radio" value="" /> <label for="question2answer13"></label></div>
+
+<div class="rgroup"><input id="question2answer14" name="question2answer" type="radio" value="" /> <label for="question2answer14"></label></div>
+
+<div class="rgroup"><input id="question2answer15" name="question2answer" type="radio" value="" /> <label for="question2answer15"></label></div>
+
+<div class="rgroup"><input id="question2answer16" name="question2answer" type="radio" value="" /> <label for="question2answer16"></label></div>
+</fieldset>
+
+<fieldset><label>3</label>
+
+<p>Question: <strong>What is the beak length?</strong></p>
+
+<p>Caption: <strong>a tiny yellow bird with a black crown</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question3answer0" name="question3answer" type="radio" value="about_the_same_as_head" /> <label for="question3answer0">about_the_same_as_head</label></div>
+
+<div class="rgroup"><input id="question3answer1" name="question3answer" type="radio" value="longer_than_head" /> <label for="question3answer1">longer_than_head</label></div>
+
+<div class="rgroup"><input id="question3answer2" name="question3answer" type="radio" value="shorter_than_head" /> <label for="question3answer2">shorter_than_head</label></div>
+
+<div class="rgroup"><input id="question3answer3" name="question3answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question3answer3">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question3answer4" name="question3answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question3answer4">The caption does not contain an answer to the question</label></div>
+
+<div class="rgroup"><input id="question3answer5" name="question3answer" type="radio" value="" /> <label for="question3answer5"></label></div>
+
+<div class="rgroup"><input id="question3answer6" name="question3answer" type="radio" value="" /> <label for="question3answer6"></label></div>
+
+<div class="rgroup"><input id="question3answer7" name="question3answer" type="radio" value="" /> <label for="question3answer7"></label></div>
+
+<div class="rgroup"><input id="question3answer8" name="question3answer" type="radio" value="" /> <label for="question3answer8"></label></div>
+
+<div class="rgroup"><input id="question3answer9" name="question3answer" type="radio" value="" /> <label for="question3answer9"></label></div>
+
+<div class="rgroup"><input id="question3answer10" name="question3answer" type="radio" value="" /> <label for="question3answer10"></label></div>
+
+<div class="rgroup"><input id="question3answer11" name="question3answer" type="radio" value="" /> <label for="question3answer11"></label></div>
+
+<div class="rgroup"><input id="question3answer12" name="question3answer" type="radio" value="" /> <label for="question3answer12"></label></div>
+
+<div class="rgroup"><input id="question3answer13" name="question3answer" type="radio" value="" /> <label for="question3answer13"></label></div>
+
+<div class="rgroup"><input id="question3answer14" name="question3answer" type="radio" value="" /> <label for="question3answer14"></label></div>
+
+<div class="rgroup"><input id="question3answer15" name="question3answer" type="radio" value="" /> <label for="question3answer15"></label></div>
+
+<div class="rgroup"><input id="question3answer16" name="question3answer" type="radio" value="" /> <label for="question3answer16"></label></div>
+</fieldset>
+
+<fieldset><label>4</label>
+
+<p>Question: <strong>What is the beak shape?</strong></p>
+
+<p>Caption: <strong>this is a white bird with black feet and a pointy downward beak</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question4answer0" name="question4answer" type="radio" value="curved_(up_or_down)" /> <label for="question4answer0">curved_(up_or_down)</label></div>
+
+<div class="rgroup"><input id="question4answer1" name="question4answer" type="radio" value="dagger" /> <label for="question4answer1">dagger</label></div>
+
+<div class="rgroup"><input id="question4answer2" name="question4answer" type="radio" value="hooked" /> <label for="question4answer2">hooked</label></div>
+
+<div class="rgroup"><input id="question4answer3" name="question4answer" type="radio" value="needle" /> <label for="question4answer3">needle</label></div>
+
+<div class="rgroup"><input id="question4answer4" name="question4answer" type="radio" value="hooked_seabird" /> <label for="question4answer4">hooked_seabird</label></div>
+
+<div class="rgroup"><input id="question4answer5" name="question4answer" type="radio" value="spatulate" /> <label for="question4answer5">spatulate</label></div>
+
+<div class="rgroup"><input id="question4answer6" name="question4answer" type="radio" value="all-purpose" /> <label for="question4answer6">all-purpose</label></div>
+
+<div class="rgroup"><input id="question4answer7" name="question4answer" type="radio" value="cone" /> <label for="question4answer7">cone</label></div>
+
+<div class="rgroup"><input id="question4answer8" name="question4answer" type="radio" value="specialized" /> <label for="question4answer8">specialized</label></div>
+
+<div class="rgroup"><input id="question4answer9" name="question4answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question4answer9">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question4answer10" name="question4answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question4answer10">The caption does not contain an answer to the question</label></div>
+
+<div class="rgroup"><input id="question4answer11" name="question4answer" type="radio" value="" /> <label for="question4answer11"></label></div>
+
+<div class="rgroup"><input id="question4answer12" name="question4answer" type="radio" value="" /> <label for="question4answer12"></label></div>
+
+<div class="rgroup"><input id="question4answer13" name="question4answer" type="radio" value="" /> <label for="question4answer13"></label></div>
+
+<div class="rgroup"><input id="question4answer14" name="question4answer" type="radio" value="" /> <label for="question4answer14"></label></div>
+
+<div class="rgroup"><input id="question4answer15" name="question4answer" type="radio" value="" /> <label for="question4answer15"></label></div>
+
+<div class="rgroup"><input id="question4answer16" name="question4answer" type="radio" value="" /> <label for="question4answer16"></label></div>
+</fieldset>
+
+<fieldset><label>5</label>
+
+<p>Question: <strong>What is the throat color?</strong></p>
+
+<p>Caption: <strong>a small bird with a yellow belly and throat a a dark gray crown and a long pointed bill</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question5answer0" name="question5answer" type="radio" value="blue" /> <label for="question5answer0">blue</label></div>
+
+<div class="rgroup"><input id="question5answer1" name="question5answer" type="radio" value="brown" /> <label for="question5answer1">brown</label></div>
+
+<div class="rgroup"><input id="question5answer2" name="question5answer" type="radio" value="iridescent" /> <label for="question5answer2">iridescent</label></div>
+
+<div class="rgroup"><input id="question5answer3" name="question5answer" type="radio" value="purple" /> <label for="question5answer3">purple</label></div>
+
+<div class="rgroup"><input id="question5answer4" name="question5answer" type="radio" value="rufous" /> <label for="question5answer4">rufous</label></div>
+
+<div class="rgroup"><input id="question5answer5" name="question5answer" type="radio" value="grey" /> <label for="question5answer5">grey</label></div>
+
+<div class="rgroup"><input id="question5answer6" name="question5answer" type="radio" value="yellow" /> <label for="question5answer6">yellow</label></div>
+
+<div class="rgroup"><input id="question5answer7" name="question5answer" type="radio" value="olive" /> <label for="question5answer7">olive</label></div>
+
+<div class="rgroup"><input id="question5answer8" name="question5answer" type="radio" value="green" /> <label for="question5answer8">green</label></div>
+
+<div class="rgroup"><input id="question5answer9" name="question5answer" type="radio" value="pink" /> <label for="question5answer9">pink</label></div>
+
+<div class="rgroup"><input id="question5answer10" name="question5answer" type="radio" value="orange" /> <label for="question5answer10">orange</label></div>
+
+<div class="rgroup"><input id="question5answer11" name="question5answer" type="radio" value="black" /> <label for="question5answer11">black</label></div>
+
+<div class="rgroup"><input id="question5answer12" name="question5answer" type="radio" value="white" /> <label for="question5answer12">white</label></div>
+
+<div class="rgroup"><input id="question5answer13" name="question5answer" type="radio" value="red" /> <label for="question5answer13">red</label></div>
+
+<div class="rgroup"><input id="question5answer14" name="question5answer" type="radio" value="buff" /> <label for="question5answer14">buff</label></div>
+
+<div class="rgroup"><input id="question5answer15" name="question5answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question5answer15">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question5answer16" name="question5answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question5answer16">The caption does not contain an answer to the question</label></div>
+</fieldset>
+
+<fieldset><label>6</label>
+
+<p>Question: <strong>What is the beak shape?</strong></p>
+
+<p>Caption: <strong>a bird with a swept back crown black throat orange cheek patch and gray body</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question6answer0" name="question6answer" type="radio" value="curved_(up_or_down)" /> <label for="question6answer0">curved_(up_or_down)</label></div>
+
+<div class="rgroup"><input id="question6answer1" name="question6answer" type="radio" value="dagger" /> <label for="question6answer1">dagger</label></div>
+
+<div class="rgroup"><input id="question6answer2" name="question6answer" type="radio" value="hooked" /> <label for="question6answer2">hooked</label></div>
+
+<div class="rgroup"><input id="question6answer3" name="question6answer" type="radio" value="needle" /> <label for="question6answer3">needle</label></div>
+
+<div class="rgroup"><input id="question6answer4" name="question6answer" type="radio" value="hooked_seabird" /> <label for="question6answer4">hooked_seabird</label></div>
+
+<div class="rgroup"><input id="question6answer5" name="question6answer" type="radio" value="spatulate" /> <label for="question6answer5">spatulate</label></div>
+
+<div class="rgroup"><input id="question6answer6" name="question6answer" type="radio" value="all-purpose" /> <label for="question6answer6">all-purpose</label></div>
+
+<div class="rgroup"><input id="question6answer7" name="question6answer" type="radio" value="cone" /> <label for="question6answer7">cone</label></div>
+
+<div class="rgroup"><input id="question6answer8" name="question6answer" type="radio" value="specialized" /> <label for="question6answer8">specialized</label></div>
+
+<div class="rgroup"><input id="question6answer9" name="question6answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question6answer9">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question6answer10" name="question6answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question6answer10">The caption does not contain an answer to the question</label></div>
+
+<div class="rgroup"><input id="question6answer11" name="question6answer" type="radio" value="" /> <label for="question6answer11"></label></div>
+
+<div class="rgroup"><input id="question6answer12" name="question6answer" type="radio" value="" /> <label for="question6answer12"></label></div>
+
+<div class="rgroup"><input id="question6answer13" name="question6answer" type="radio" value="" /> <label for="question6answer13"></label></div>
+
+<div class="rgroup"><input id="question6answer14" name="question6answer" type="radio" value="" /> <label for="question6answer14"></label></div>
+
+<div class="rgroup"><input id="question6answer15" name="question6answer" type="radio" value="" /> <label for="question6answer15"></label></div>
+
+<div class="rgroup"><input id="question6answer16" name="question6answer" type="radio" value="" /> <label for="question6answer16"></label></div>
+</fieldset>
+
+<fieldset><label>7</label>
+
+<p>Question: <strong>What is the crown color?</strong></p>
+
+<p>Caption: <strong>this is a white bird with grey wings and webbed feet</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question7answer0" name="question7answer" type="radio" value="blue" /> <label for="question7answer0">blue</label></div>
+
+<div class="rgroup"><input id="question7answer1" name="question7answer" type="radio" value="brown" /> <label for="question7answer1">brown</label></div>
+
+<div class="rgroup"><input id="question7answer2" name="question7answer" type="radio" value="iridescent" /> <label for="question7answer2">iridescent</label></div>
+
+<div class="rgroup"><input id="question7answer3" name="question7answer" type="radio" value="purple" /> <label for="question7answer3">purple</label></div>
+
+<div class="rgroup"><input id="question7answer4" name="question7answer" type="radio" value="rufous" /> <label for="question7answer4">rufous</label></div>
+
+<div class="rgroup"><input id="question7answer5" name="question7answer" type="radio" value="grey" /> <label for="question7answer5">grey</label></div>
+
+<div class="rgroup"><input id="question7answer6" name="question7answer" type="radio" value="yellow" /> <label for="question7answer6">yellow</label></div>
+
+<div class="rgroup"><input id="question7answer7" name="question7answer" type="radio" value="olive" /> <label for="question7answer7">olive</label></div>
+
+<div class="rgroup"><input id="question7answer8" name="question7answer" type="radio" value="green" /> <label for="question7answer8">green</label></div>
+
+<div class="rgroup"><input id="question7answer9" name="question7answer" type="radio" value="pink" /> <label for="question7answer9">pink</label></div>
+
+<div class="rgroup"><input id="question7answer10" name="question7answer" type="radio" value="orange" /> <label for="question7answer10">orange</label></div>
+
+<div class="rgroup"><input id="question7answer11" name="question7answer" type="radio" value="black" /> <label for="question7answer11">black</label></div>
+
+<div class="rgroup"><input id="question7answer12" name="question7answer" type="radio" value="white" /> <label for="question7answer12">white</label></div>
+
+<div class="rgroup"><input id="question7answer13" name="question7answer" type="radio" value="red" /> <label for="question7answer13">red</label></div>
+
+<div class="rgroup"><input id="question7answer14" name="question7answer" type="radio" value="buff" /> <label for="question7answer14">buff</label></div>
+
+<div class="rgroup"><input id="question7answer15" name="question7answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question7answer15">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question7answer16" name="question7answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question7answer16">The caption does not contain an answer to the question</label></div>
+</fieldset>
+
+<fieldset><label>8</label>
+
+<p>Question: <strong>What is the crown color?</strong></p>
+
+<p>Caption: <strong>this is a brown bird with a pointy beak</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question8answer0" name="question8answer" type="radio" value="blue" /> <label for="question8answer0">blue</label></div>
+
+<div class="rgroup"><input id="question8answer1" name="question8answer" type="radio" value="brown" /> <label for="question8answer1">brown</label></div>
+
+<div class="rgroup"><input id="question8answer2" name="question8answer" type="radio" value="iridescent" /> <label for="question8answer2">iridescent</label></div>
+
+<div class="rgroup"><input id="question8answer3" name="question8answer" type="radio" value="purple" /> <label for="question8answer3">purple</label></div>
+
+<div class="rgroup"><input id="question8answer4" name="question8answer" type="radio" value="rufous" /> <label for="question8answer4">rufous</label></div>
+
+<div class="rgroup"><input id="question8answer5" name="question8answer" type="radio" value="grey" /> <label for="question8answer5">grey</label></div>
+
+<div class="rgroup"><input id="question8answer6" name="question8answer" type="radio" value="yellow" /> <label for="question8answer6">yellow</label></div>
+
+<div class="rgroup"><input id="question8answer7" name="question8answer" type="radio" value="olive" /> <label for="question8answer7">olive</label></div>
+
+<div class="rgroup"><input id="question8answer8" name="question8answer" type="radio" value="green" /> <label for="question8answer8">green</label></div>
+
+<div class="rgroup"><input id="question8answer9" name="question8answer" type="radio" value="pink" /> <label for="question8answer9">pink</label></div>
+
+<div class="rgroup"><input id="question8answer10" name="question8answer" type="radio" value="orange" /> <label for="question8answer10">orange</label></div>
+
+<div class="rgroup"><input id="question8answer11" name="question8answer" type="radio" value="black" /> <label for="question8answer11">black</label></div>
+
+<div class="rgroup"><input id="question8answer12" name="question8answer" type="radio" value="white" /> <label for="question8answer12">white</label></div>
+
+<div class="rgroup"><input id="question8answer13" name="question8answer" type="radio" value="red" /> <label for="question8answer13">red</label></div>
+
+<div class="rgroup"><input id="question8answer14" name="question8answer" type="radio" value="buff" /> <label for="question8answer14">buff</label></div>
+
+<div class="rgroup"><input id="question8answer15" name="question8answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question8answer15">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question8answer16" name="question8answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question8answer16">The caption does not contain an answer to the question</label></div>
+</fieldset>
+
+<fieldset><label>9</label>
+
+<p>Question: <strong>What is the wing pattern?</strong></p>
+
+<p>Caption: <strong>this is a brown and white spotted bird with a large crooked black beak</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question9answer0" name="question9answer" type="radio" value="solid" /> <label for="question9answer0">solid</label></div>
+
+<div class="rgroup"><input id="question9answer1" name="question9answer" type="radio" value="spotted" /> <label for="question9answer1">spotted</label></div>
+
+<div class="rgroup"><input id="question9answer2" name="question9answer" type="radio" value="striped" /> <label for="question9answer2">striped</label></div>
+
+<div class="rgroup"><input id="question9answer3" name="question9answer" type="radio" value="multi-colored" /> <label for="question9answer3">multi-colored</label></div>
+
+<div class="rgroup"><input id="question9answer4" name="question9answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question9answer4">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question9answer5" name="question9answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question9answer5">The caption does not contain an answer to the question</label></div>
+
+<div class="rgroup"><input id="question9answer6" name="question9answer" type="radio" value="" /> <label for="question9answer6"></label></div>
+
+<div class="rgroup"><input id="question9answer7" name="question9answer" type="radio" value="" /> <label for="question9answer7"></label></div>
+
+<div class="rgroup"><input id="question9answer8" name="question9answer" type="radio" value="" /> <label for="question9answer8"></label></div>
+
+<div class="rgroup"><input id="question9answer9" name="question9answer" type="radio" value="" /> <label for="question9answer9"></label></div>
+
+<div class="rgroup"><input id="question9answer10" name="question9answer" type="radio" value="" /> <label for="question9answer10"></label></div>
+
+<div class="rgroup"><input id="question9answer11" name="question9answer" type="radio" value="" /> <label for="question9answer11"></label></div>
+
+<div class="rgroup"><input id="question9answer12" name="question9answer" type="radio" value="" /> <label for="question9answer12"></label></div>
+
+<div class="rgroup"><input id="question9answer13" name="question9answer" type="radio" value="" /> <label for="question9answer13"></label></div>
+
+<div class="rgroup"><input id="question9answer14" name="question9answer" type="radio" value="" /> <label for="question9answer14"></label></div>
+
+<div class="rgroup"><input id="question9answer15" name="question9answer" type="radio" value="" /> <label for="question9answer15"></label></div>
+
+<div class="rgroup"><input id="question9answer16" name="question9answer" type="radio" value="" /> <label for="question9answer16"></label></div>
+</fieldset>
+
+<fieldset><label>10</label>
+
+<p>Question: <strong>What is the back color?</strong></p>
+
+<p>Caption: <strong>this is a bird with a white belly black and yellow wing and a white nape</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question10answer0" name="question10answer" type="radio" value="blue" /> <label for="question10answer0">blue</label></div>
+
+<div class="rgroup"><input id="question10answer1" name="question10answer" type="radio" value="brown" /> <label for="question10answer1">brown</label></div>
+
+<div class="rgroup"><input id="question10answer2" name="question10answer" type="radio" value="iridescent" /> <label for="question10answer2">iridescent</label></div>
+
+<div class="rgroup"><input id="question10answer3" name="question10answer" type="radio" value="purple" /> <label for="question10answer3">purple</label></div>
+
+<div class="rgroup"><input id="question10answer4" name="question10answer" type="radio" value="rufous" /> <label for="question10answer4">rufous</label></div>
+
+<div class="rgroup"><input id="question10answer5" name="question10answer" type="radio" value="grey" /> <label for="question10answer5">grey</label></div>
+
+<div class="rgroup"><input id="question10answer6" name="question10answer" type="radio" value="yellow" /> <label for="question10answer6">yellow</label></div>
+
+<div class="rgroup"><input id="question10answer7" name="question10answer" type="radio" value="olive" /> <label for="question10answer7">olive</label></div>
+
+<div class="rgroup"><input id="question10answer8" name="question10answer" type="radio" value="green" /> <label for="question10answer8">green</label></div>
+
+<div class="rgroup"><input id="question10answer9" name="question10answer" type="radio" value="pink" /> <label for="question10answer9">pink</label></div>
+
+<div class="rgroup"><input id="question10answer10" name="question10answer" type="radio" value="orange" /> <label for="question10answer10">orange</label></div>
+
+<div class="rgroup"><input id="question10answer11" name="question10answer" type="radio" value="black" /> <label for="question10answer11">black</label></div>
+
+<div class="rgroup"><input id="question10answer12" name="question10answer" type="radio" value="white" /> <label for="question10answer12">white</label></div>
+
+<div class="rgroup"><input id="question10answer13" name="question10answer" type="radio" value="red" /> <label for="question10answer13">red</label></div>
+
+<div class="rgroup"><input id="question10answer14" name="question10answer" type="radio" value="buff" /> <label for="question10answer14">buff</label></div>
+
+<div class="rgroup"><input id="question10answer15" name="question10answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question10answer15">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question10answer16" name="question10answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question10answer16">The caption does not contain an answer to the question</label></div>
+</fieldset>
+
+<fieldset><label>11</label>
+
+<p>Question: <strong>What is the breast pattern?</strong></p>
+
+<p>Caption: <strong>a red and black small bird with black primaries and inner rectrices and outer rectrices</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question11answer0" name="question11answer" type="radio" value="solid" /> <label for="question11answer0">solid</label></div>
+
+<div class="rgroup"><input id="question11answer1" name="question11answer" type="radio" value="spotted" /> <label for="question11answer1">spotted</label></div>
+
+<div class="rgroup"><input id="question11answer2" name="question11answer" type="radio" value="striped" /> <label for="question11answer2">striped</label></div>
+
+<div class="rgroup"><input id="question11answer3" name="question11answer" type="radio" value="multi-colored" /> <label for="question11answer3">multi-colored</label></div>
+
+<div class="rgroup"><input id="question11answer4" name="question11answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question11answer4">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question11answer5" name="question11answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question11answer5">The caption does not contain an answer to the question</label></div>
+
+<div class="rgroup"><input id="question11answer6" name="question11answer" type="radio" value="" /> <label for="question11answer6"></label></div>
+
+<div class="rgroup"><input id="question11answer7" name="question11answer" type="radio" value="" /> <label for="question11answer7"></label></div>
+
+<div class="rgroup"><input id="question11answer8" name="question11answer" type="radio" value="" /> <label for="question11answer8"></label></div>
+
+<div class="rgroup"><input id="question11answer9" name="question11answer" type="radio" value="" /> <label for="question11answer9"></label></div>
+
+<div class="rgroup"><input id="question11answer10" name="question11answer" type="radio" value="" /> <label for="question11answer10"></label></div>
+
+<div class="rgroup"><input id="question11answer11" name="question11answer" type="radio" value="" /> <label for="question11answer11"></label></div>
+
+<div class="rgroup"><input id="question11answer12" name="question11answer" type="radio" value="" /> <label for="question11answer12"></label></div>
+
+<div class="rgroup"><input id="question11answer13" name="question11answer" type="radio" value="" /> <label for="question11answer13"></label></div>
+
+<div class="rgroup"><input id="question11answer14" name="question11answer" type="radio" value="" /> <label for="question11answer14"></label></div>
+
+<div class="rgroup"><input id="question11answer15" name="question11answer" type="radio" value="" /> <label for="question11answer15"></label></div>
+
+<div class="rgroup"><input id="question11answer16" name="question11answer" type="radio" value="" /> <label for="question11answer16"></label></div>
+</fieldset>
+
+<fieldset><label>12</label>
+
+<p>Question: <strong>What is the beak length?</strong></p>
+
+<p>Caption: <strong>this is a black bird with a yellow nape and a white head</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question12answer0" name="question12answer" type="radio" value="about_the_same_as_head" /> <label for="question12answer0">about_the_same_as_head</label></div>
+
+<div class="rgroup"><input id="question12answer1" name="question12answer" type="radio" value="longer_than_head" /> <label for="question12answer1">longer_than_head</label></div>
+
+<div class="rgroup"><input id="question12answer2" name="question12answer" type="radio" value="shorter_than_head" /> <label for="question12answer2">shorter_than_head</label></div>
+
+<div class="rgroup"><input id="question12answer3" name="question12answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question12answer3">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question12answer4" name="question12answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question12answer4">The caption does not contain an answer to the question</label></div>
+
+<div class="rgroup"><input id="question12answer5" name="question12answer" type="radio" value="" /> <label for="question12answer5"></label></div>
+
+<div class="rgroup"><input id="question12answer6" name="question12answer" type="radio" value="" /> <label for="question12answer6"></label></div>
+
+<div class="rgroup"><input id="question12answer7" name="question12answer" type="radio" value="" /> <label for="question12answer7"></label></div>
+
+<div class="rgroup"><input id="question12answer8" name="question12answer" type="radio" value="" /> <label for="question12answer8"></label></div>
+
+<div class="rgroup"><input id="question12answer9" name="question12answer" type="radio" value="" /> <label for="question12answer9"></label></div>
+
+<div class="rgroup"><input id="question12answer10" name="question12answer" type="radio" value="" /> <label for="question12answer10"></label></div>
+
+<div class="rgroup"><input id="question12answer11" name="question12answer" type="radio" value="" /> <label for="question12answer11"></label></div>
+
+<div class="rgroup"><input id="question12answer12" name="question12answer" type="radio" value="" /> <label for="question12answer12"></label></div>
+
+<div class="rgroup"><input id="question12answer13" name="question12answer" type="radio" value="" /> <label for="question12answer13"></label></div>
+
+<div class="rgroup"><input id="question12answer14" name="question12answer" type="radio" value="" /> <label for="question12answer14"></label></div>
+
+<div class="rgroup"><input id="question12answer15" name="question12answer" type="radio" value="" /> <label for="question12answer15"></label></div>
+
+<div class="rgroup"><input id="question12answer16" name="question12answer" type="radio" value="" /> <label for="question12answer16"></label></div>
+</fieldset>
+
+<fieldset><label>13</label>
+
+<p>Question: <strong>What is the leg color?</strong></p>
+
+<p>Caption: <strong>this is a grey bird with brown wings and a pointy black beak</strong></p>
+
+<p>Select the answer conveyed by the caption, or indicate that the caption doesn't provide an answer:</p>
+
+<div class="rgroup"><input id="question13answer0" name="question13answer" type="radio" value="blue" /> <label for="question13answer0">blue</label></div>
+
+<div class="rgroup"><input id="question13answer1" name="question13answer" type="radio" value="brown" /> <label for="question13answer1">brown</label></div>
+
+<div class="rgroup"><input id="question13answer2" name="question13answer" type="radio" value="iridescent" /> <label for="question13answer2">iridescent</label></div>
+
+<div class="rgroup"><input id="question13answer3" name="question13answer" type="radio" value="purple" /> <label for="question13answer3">purple</label></div>
+
+<div class="rgroup"><input id="question13answer4" name="question13answer" type="radio" value="rufous" /> <label for="question13answer4">rufous</label></div>
+
+<div class="rgroup"><input id="question13answer5" name="question13answer" type="radio" value="grey" /> <label for="question13answer5">grey</label></div>
+
+<div class="rgroup"><input id="question13answer6" name="question13answer" type="radio" value="yellow" /> <label for="question13answer6">yellow</label></div>
+
+<div class="rgroup"><input id="question13answer7" name="question13answer" type="radio" value="olive" /> <label for="question13answer7">olive</label></div>
+
+<div class="rgroup"><input id="question13answer8" name="question13answer" type="radio" value="green" /> <label for="question13answer8">green</label></div>
+
+<div class="rgroup"><input id="question13answer9" name="question13answer" type="radio" value="pink" /> <label for="question13answer9">pink</label></div>
+
+<div class="rgroup"><input id="question13answer10" name="question13answer" type="radio" value="orange" /> <label for="question13answer10">orange</label></div>
+
+<div class="rgroup"><input id="question13answer11" name="question13answer" type="radio" value="black" /> <label for="question13answer11">black</label></div>
+
+<div class="rgroup"><input id="question13answer12" name="question13answer" type="radio" value="white" /> <label for="question13answer12">white</label></div>
+
+<div class="rgroup"><input id="question13answer13" name="question13answer" type="radio" value="red" /> <label for="question13answer13">red</label></div>
+
+<div class="rgroup"><input id="question13answer14" name="question13answer" type="radio" value="buff" /> <label for="question13answer14">buff</label></div>
+
+<div class="rgroup"><input id="question13answer15" name="question13answer" type="radio" value="The caption answers the question, but not with one of the above options" /> <label for="question13answer15">The caption answers the question, but not with one of the above options</label></div>
+
+<div class="rgroup"><input id="question13answer16" name="question13answer" type="radio" value="The caption does not contain an answer to the question" /> <label for="question13answer16">The caption does not contain an answer to the question</label></div>
+</fieldset>
+
+<div>
+<p>If you have any questions/suggestions about this task, feel free to leave a comment here. We appreciate your input to this task.</p>
+<!--<input id="comment-final" name="comment-final" type="text" size=100/>--><crowd-input name="comment-final" placeholder="Comment..."></crowd-input></div>
+</crowd-form></div>
+<!-- End Content Body --></section>
+<!-- close container -->
+<style type="text/css">fieldset {
+    padding: 10px;
+    background:#fbfbfb;
+    border-radius:5px;
+    border:1px solid #ccc;
+    margin-bottom:5px;
+}
+.rgroup {
+    display: block;
+}
+.rgroup label {
+    display: inline-block;
+}
+</style>
+<script>
+
+// Some JS for instruction 
+
+// END
+
+var totalItems = 13;
+
+var numSelected = 0;
+for (var i = 1; i <= totalItems; i++) {
+    var radios = document.getElementsByName("question" + i.toString() + "answer");
+    for (var j = 0, length = radios.length; j < length; j++) {
+        if (radios[j].value == "") {
+            radios[j].style.display = "none";
+	    radios[j].parentNode.style.display = "none";
+        }
+    }
+}
+
+
+function validateForm() {
+    var numSelected = 0;
+    for (var i = 1; i <= totalItems; i++) {
+        var radios = document.getElementsByName("question" + i.toString() + "answer");
+    	for (var j = 0, length=radios.length; j < length; j++) {
+            if (radios[j].checked) {
+                numSelected++;
+            }
+    	}
+    }
+    return numSelected;
+}
+
+document.querySelector('crowd-form').onsubmit = function(e) {
+    var numSelected = validateForm();
+    if (numSelected !== totalItems) {
+        alert("You must answer all the questions before submitting. \nYou have answered " + numSelected.toString() + " out of " + totalItems + " questions.");
+        e.preventDefault();
+    } else {
+        alert("Thanks for your annotation! \n We hope you have a nice day!");
+    }
+}
+
+</script></body></html>

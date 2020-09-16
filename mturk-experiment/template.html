@@ -1,0 +1,180 @@
+<script src="//uniqueturker.myleott.com/lib.js" type="text/javascript"></script>
+<script type="text/javascript">
+(function(){
+    var ut_id = "6c1d63b2587ba0ff6a5a130e1c822943";
+    if (UTWorkerLimitReached(ut_id)) {
+        document.getElementById('mturk_form').style.display = 'none';
+        document.getElementsByTagName('body')[0].innerHTML = "You have already completed the maximum number of HITs allowed by this requester. Please click 'Return HIT' to avoid any impact on your approval rating.";
+    }
+})();
+</script>
+
+<!-- Bootstrap v3.0.3 -->
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+  <div class="row col-xs-12 col-md-12"><!-- Instructions -->
+    <div class="panel panel-primary">
+      <div class="panel-heading"><strong>Instructions</strong></div>
+
+      <div class="panel-body">
+	<p>You will be shown 13 questions and associated image caption texts about birds. Please try to determine whether the caption includes an answer to the question.</p>
+    <p>For people who are less familiar with bird terminology, here are some quick introductions: </p>
+    <p><img src="https://infovisual.info/storage/app/media/02/img_en/053%20Morphology%20of%20a%20bird.jpg"></p>
+    <p><img src="https://nusavifauna.files.wordpress.com/2012/08/bird_anatomy_1.jpeg" height="700px"></p>
+    <p><img src="https://7esl.com/wp-content/uploads/2018/05/Untitled-design-17.png" width="700px"></p>
+    <!-- The pictures provide a basic demonstration of bird's anatomy, but it is not a one-to-one match to the description.  -->
+    <p>Here are some ground-truth examples to help you quickly familiarize with the task: </p>
+
+    <fieldset><label>Example 1</label> 
+        <p>Question: <strong>What is the breast color?</strong></p>
+        <p>Caption: <strong>a small bird with yellow chest white vent and gray crown</strong></p>
+        <p><input type="radio" disabled> red</p>
+        <p><input type="radio" checked> yellow</p>
+        <p><input type="radio" disabled> balck</p>
+        <p><input type="radio" disabled> The caption answers the question, but not with one of the above options </p>
+        <p><input type="radio" disabled> The caption does not contain an answer to the question </p>
+    </fieldset>
+
+    <p>In the above example, even though the description says <b>chest</b>, you should realize that it is describing the <b>breast</b> region.</p>
+
+    <fieldset><label>Example 2</label> 
+        <p>Question: <strong>What is the throat color?</strong></p>
+        <p>Caption: <strong>this large bird has a white body black wings and long hooked bill</strong></p>
+        <p><input type="radio" disabled> red</p>
+        <p><input type="radio" disabled> yellow</p>
+        <p><input type="radio" disabled> balck</p>
+        <p><input type="radio" disabled> The caption answers the question, but not with one of the above options </p>
+        <p><input type="radio" checked> The caption does not contain an answer to the question </p>
+    </fieldset>
+
+    <p>In the above example, the very generic description like <b>"white body"</b> does not provide enough information about which part of the body is white. Therefore, we cannot answer this question.
+       Similarly, "white body" <b>does not</b> mean "white breast", "whtie back", "white wing", etc.
+    </p>
+
+    <fieldset><label>Example 3</label> 
+        <p>Question: <strong>What is the breast pattern?</strong></p>
+        <p>Caption: <strong>this bird has a white belly and breast with a speckled appearance on its back</strong></p>
+        <p><input type="radio" disabled> solid</p>
+        <p><input type="radio" disabled> spotted</p>
+        <p><input type="radio" disabled> striped</p>
+        <p><input type='radio' disabled> multi-colored </p>
+        <p><input type="radio" disabled> The caption answers the question, but not with one of the above options </p>
+        <p><input type="radio" checked> The caption does not contain an answer to the question </p>
+    </fieldset>
+
+    <p>In the above example, even though <b>"white belly and breast"</b> was written, it is not describing the <b>pattern</b> of the breast. In order to have a valid description of the pattern of breast, words like 
+    <b>"speckled", "spotted", "solid", "colored"</b> need to be used.</p>
+
+    <p>Now, please complete the next 2 trial questions yourself. <b>You must complete them to receive payment for this HIT.</b></p>
+
+    <fieldset><label>Trial 1</label> 
+        <p>Question: <strong>What is the back color?</strong></p>
+        <p>Caption: <strong>this is a black bird with white on the wingbars and orange feet</strong></p>
+        <p><input type="radio" name="trial1answer" onclick="document.getElementById('trial1-failure').style.display='block'; document.getElementById('trial1-success').style.display='none'"> red</p>
+        <p><input type="radio" name="trial1answer" onclick="document.getElementById('trial1-failure').style.display='block'; document.getElementById('trial1-success').style.display='none'"> yellow</p>
+        <p><input type="radio" name="trial1answer" onclick="document.getElementById('trial1-failure').style.display='block'; document.getElementById('trial1-success').style.display='none'"> balck</p>
+        <p><input type="radio" name="trial1answer" onclick="document.getElementById('trial1-failure').style.display='block'; document.getElementById('trial1-success').style.display='none'"> The caption answers the question, but not with one of the above options </p>
+        <p><input type="radio" name="trial1answer" onclick="document.getElementById('trial1-failure').style.display='none'; document.getElementById('trial1-success').style.display='block'"> The caption does not contain an answer to the question </p>
+        <div style='display:none' id='trial1-failure'> <p style='color:red'><b>Wrong!</b> Notice that "black bird" is too general of a description for any part of the bird.</p> </div>
+        <div style='display:none' id='trial1-success'> <p style='color:blue'><b>Correct!</b> Congratulations! Keep in mind that "black bird" is too general of a description for any part of the bird.</p> </div>
+    </fieldset>
+
+    <fieldset><label>Trial 2</label> 
+        <p>Question: <strong>What is the breast pattern?</strong></p>
+        <p>Caption: <strong>a small yellow bird with a black crown and throat</strong></p>
+        <p><input type="radio" name="trial2answer" onclick="document.getElementById('trial2-failure').style.display='block'; document.getElementById('trial2-success').style.display='none'" /> solid</p>
+        <p><input type="radio" name="trial2answer" onclick="document.getElementById('trial2-failure').style.display='block'; document.getElementById('trial2-success').style.display='none'"> spotted</p>
+        <p><input type="radio" name="trial2answer" onclick="document.getElementById('trial2-failure').style.display='block'; document.getElementById('trial2-success').style.display='none'"> striped</p>
+        <p><input type='radio' name="trial2answer" onclick="document.getElementById('trial2-failure').style.display='block'; document.getElementById('trial2-success').style.display='none'"> multi-colored </p>
+        <p><input type="radio" name="trial2answer" onclick="document.getElementById('trial2-failure').style.display='block'; document.getElementById('trial2-success').style.display='none'"> The caption answers the question, but not with one of the above options </p>
+        <p><input type="radio" name="trial2answer" onclick="document.getElementById('trial2-failure').style.display='none'; document.getElementById('trial2-success').style.display='block'"> The caption does not contain an answer to the question </p>
+        <div style='display:none' id='trial2-failure'> <p style='color:red'><b>Wrong!</b> Rembmer "yellow" as a color word should not be used to describe patterns!</p> </div>
+        <div style='display:none' id='trial2-success'> <p style='color:blue'><b>Correct!</b> Congratulations! Keep in mind that "yellow" as a color word should not be used to describe pattern!</p> </div>
+    </fieldset>
+
+      <p>Once you have finished the above trial rounds, please continue to the 13 cases below.</p>
+      
+      	<p>For some cases, it will be immediately evident that the caption answers the question. We will use these to check that you are working carefully. </p>
+	    <p>For others, it will be less clear whether the caption answers the question.  We won't be checking your work with these; just do your best to come to a clear conclusion.</p>
+
+      </div>
+    </div>
+
+    <!-- End Instructions --><!-- Content Body -->
+
+    <crowd-form>
+
+      ${HIT_ITEMS}
+
+      <div>
+	<p>If you have any questions/suggestions about this task, feel free to leave a comment here. We appreciate your input to this task.</p>
+	<!--<input id="comment-final" name="comment-final" type="text" size=100/>-->
+	<crowd-input name="comment-final"  placeholder="Comment..."></crowd-input>
+      </div>
+
+    </crowd-form>
+
+  </div><!-- End Content Body -->
+</section> <!-- close container -->
+
+<style type="text/css">fieldset {
+    padding: 10px;
+    background:#fbfbfb;
+    border-radius:5px;
+    border:1px solid #ccc;
+    margin-bottom:5px;
+}
+.rgroup {
+    display: block;
+}
+.rgroup label {
+    display: inline-block;
+}
+  </style>
+
+
+<script>
+
+// Some JS for instruction 
+
+// END
+
+var totalItems = 13;
+
+var numSelected = 0;
+for (var i = 1; i <= totalItems; i++) {
+    var radios = document.getElementsByName("question" + i.toString() + "answer");
+    for (var j = 0, length = radios.length; j < length; j++) {
+        if (radios[j].value == "") {
+            radios[j].style.display = "none";
+	    radios[j].parentNode.style.display = "none";
+        }
+    }
+}
+
+
+function validateForm() {
+    var numSelected = 0;
+    for (var i = 1; i <= totalItems; i++) {
+        var radios = document.getElementsByName("question" + i.toString() + "answer");
+    	for (var j = 0, length=radios.length; j < length; j++) {
+            if (radios[j].checked) {
+                numSelected++;
+            }
+    	}
+    }
+    return numSelected;
+}
+
+document.querySelector('crowd-form').onsubmit = function(e) {
+    var numSelected = validateForm();
+    if (numSelected !== totalItems) {
+        alert("You must answer all the questions before submitting. \nYou have answered " + numSelected.toString() + " out of " + totalItems + " questions.");
+        e.preventDefault();
+    } else {
+        alert("Thanks for your annotation! \n We hope you have a nice day!");
+    }
+}
+
+</script>

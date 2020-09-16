@@ -1,0 +1,48 @@
+# Commands we use 
+# 1/18/2019
+
+# It takes a while to finish, close to 30 minutes
+# now decoding has been fixed, this runs
+# 5000 means we evaluate on the entire Karpathy test split
+# result: 
+CUDA_VISIBLE_DEVICES=1 python3.6 eval.py --dump_images 0 --num_images 5000 --model ./data/bottomup/trans_nsc/model-best.pth --infos_path ./data/bottomup/trans_nsc/infos_trans_nsc-best.pkl --language_eval 1 --sample_method bs --beam_size 5
+
+# on valid as well!!
+# Normally the valid JSON is decoded during training...I think
+CUDA_VISIBLE_DEVICES=1 python3.6 eval.py --dump_images 0 --num_images 5000 --model ./data/bottomup/trans_nsc/model-best.pth --infos_path ./data/bottomup/trans_nsc/infos_trans_nsc-best.pkl --language_eval 1 --sample_method bs --beam_size 5 --split val
+
+
+# So instead we train our own model with the same config
+# hopefully the problem will go away
+# multi-gpu suppport is broken
+# We started at 9pm on Saturday (12 hours already)
+CUDA_VISIBLE_DEVICES=0 python3.6 train.py --cfg configs/transformer_nsc.yml --id transformer_nsc_ours
+
+# sample_n means we use the probability to do the sampling, not just the max
+
+# Do full-utterance RSA sampling
+# 500 images, 52 minutes
+# -m pdb will make it single-thread
+CUDA_VISIBLE_DEVICES=9 python3.6 -m pdb rsa.py
+
+# process MSCOCO val2017 data
+CUDA_VISIBLE_DEVICES=2 python3.6 scripts/prepro_feats.py --no_att --input_json data/dataset_coco_2017val.json --output_dir data/cocotalk_val2017 --images_root /mnt/fs5/anie/VQACaptioning/data/mscoco
+
+CUDA_VISIBLE_DEVICES=2 python3.6 scripts/prepro_feats.py --no_att --input_json data/dataset_coco_2017train.json --output_dir data/cocotalk_train2017 --images_root /mnt/fs5/anie/VQACaptioning/data/mscoco
+
+# Train language model
+
+# Preprocess labels to be the same as caption model's vocab
+
+python3.6 scripts/prepro_lm_labels.py --vocab_json data/transformer_vocab.json --dataset_json data/dataset_coco.json --output_json data/cocotalk_btu.json --output_h5 data/cocotalk_btu
+
+# basically same command
+CUDA_VISIBLE_DEVICES=8 python3.6 lm.py --cfg configs/transformer_nsc.yml --id transformer_lm_nsc
+
+# No self-critical because it doesn't make a lot of sense? We also do it with the correct data file!
+CUDA_VISIBLE_DEVICES=9 python3.6 lm.py --cfg configs/transformer_lm.yml --id transformer_lm --language_eval 0
+
+CUDA_VISIBLE_DEVICES=0 python3.6 lm.py --cfg configs/transformer_lm.yml --id transformer_lm_long --language_eval 0
+
+
+CUDA_VISIBLE_DEVICES=0 python3.6 train_model.py
